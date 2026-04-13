@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAML ↔ JSON 変換ツール</title>
+  <meta name="description" content="YAML と JSON を相互変換。独自 YAML パーサ実装、双方向ライブ変換、エラー表示。ゼロ依存 / ビルド不要。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <span class="logo">YAML ↔ JSON</span>
+    </div>
+
+    <div class="toolbar">
+      <!-- Examples dropdown -->
+      <div class="examples-wrapper">
+        <button class="btn" id="btn-examples" data-i18n="examples">サンプル</button>
+        <div class="example-menu" id="example-menu"></div>
+      </div>
+
+      <button class="btn" id="btn-clear" data-i18n="clearAll">クリア</button>
+
+      <!-- Theme / Lang toggles -->
+      <button class="btn btn-icon" id="btn-theme" title="Toggle theme">🌙</button>
+      <button class="btn btn-icon" id="btn-lang" data-i18n="lang">EN</button>
+    </div>
+  </header>
+
+  <!-- Split panes -->
+  <div class="panes">
+
+    <!-- YAML pane -->
+    <div class="pane" id="pane-yaml">
+      <div class="pane-header">
+        <span class="pane-label" data-i18n="yamlLabel">YAML</span>
+        <div class="pane-actions">
+          <button class="btn" id="btn-format-yaml" data-i18n="formatYaml">YAML を整形</button>
+          <button class="btn" id="btn-copy-yaml" data-i18n="copyYaml">コピー</button>
+        </div>
+      </div>
+      <div class="editor-wrap">
+        <textarea
+          class="editor"
+          id="yaml-editor"
+          spellcheck="false"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder="# YAML をここに入力..."
+        ></textarea>
+      </div>
+      <div class="status-bar status-idle" id="status-yaml"></div>
+    </div>
+
+    <!-- Divider -->
+    <div class="pane-divider" aria-hidden="true">⇄</div>
+
+    <!-- JSON pane -->
+    <div class="pane" id="pane-json">
+      <div class="pane-header">
+        <span class="pane-label" data-i18n="jsonLabel">JSON</span>
+        <div class="pane-actions">
+          <button class="btn" id="btn-format-json" data-i18n="formatJson">JSON を整形</button>
+          <button class="btn" id="btn-copy-json" data-i18n="copyJson">コピー</button>
+        </div>
+      </div>
+      <div class="editor-wrap">
+        <textarea
+          class="editor"
+          id="json-editor"
+          spellcheck="false"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder='{ "json": "をここに入力..." }'
+        ></textarea>
+      </div>
+      <div class="status-bar status-idle" id="status-json"></div>
+    </div>
+
+  </div>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

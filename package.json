@@ -1,0 +1,12 @@
+{
+  "name": "yaml-json",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "YAML / JSON converter with custom parser and writer.",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "serve": "python3 -m http.server 8080"
+  },
+  "license": "MIT"
+}
