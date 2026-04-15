@@ -48,3 +48,10 @@ npm test
 ## License
 
 MIT © 2026 SEN LLC (SEN 合同会社)
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/yaml-json/
+- 📝 dev.to: https://dev.to/sendotltd/a-yaml-json-converter-with-a-handwritten-yaml-subset-parser-3da2
+<!-- /sen-publish:links -->
